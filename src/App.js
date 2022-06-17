@@ -2,7 +2,8 @@
 // import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBarComp from './components/NavBar';
+import NavBar from './Components/NavBar';
+import ItemListContainer from './Components/ItemListContainer';
 
 // function App() {
 //   return (
@@ -19,7 +20,8 @@ import NavBarComp from './components/NavBar';
 
 function App() {
   return<>
-      <NavBarComp/>
+  <NavBar />
+  <ItemListContainer />
   </>
 }
 
