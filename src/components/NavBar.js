@@ -9,6 +9,7 @@ export default function NavBar() {
         <>
             <Navbar bg="dark" variant="dark">
             <Container>
+                <h3 style = {{color: 'white'}}>LVB Eventos</h3>
                 <Navbar.Brand href="#home">
                     <img
                     src={logo}

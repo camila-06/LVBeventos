@@ -19,9 +19,11 @@ import ItemListContainer from './Components/ItemListContainer';
 // }
 
 function App() {
+  let titulo = "Nuestros servicios:" 
+
   return<>
   <NavBar />
-  <ItemListContainer />
+  <ItemListContainer greeting={titulo}/>
   </>
 }
 
