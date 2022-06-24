@@ -1,30 +1,23 @@
 
-// import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Components/NavBar';
 import ItemListContainer from './Components/ItemListContainer';
+import ItemCount from './Components/ItemCount';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Hola Mundo!
-//         </p>
-//       </header>
-//     </div>
-//   );
-// }
 
 function App() {
   let titulo = "Nuestros servicios:" 
+  let stock = 5
+  let initial = 1
 
-  return<>
+  return(
+  <>
   <NavBar />
   <ItemListContainer greeting={titulo}/>
+  <ItemCount stock={stock} initial={initial} onAdd="onAdd"/>
   </>
+  )
 }
 
 export default App;
