@@ -1,0 +1,11 @@
+.contenedorItems{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjeta{
+    text-align: center;
+    margin: 30px;
+}
