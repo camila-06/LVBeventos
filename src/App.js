@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Components/NavBar';
 import ItemListContainer from './Components/ItemListContainer';
 import ItemCount from './Components/ItemCount';
+import ItemDetailContainer from './Components/ItemDetailContainer';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   <NavBar />
   <ItemListContainer greeting={titulo}/>
   <ItemCount stock={stock} initial={initial} onAdd="onAdd"/>
+  <ItemDetailContainer />
   </>
   )
 }
