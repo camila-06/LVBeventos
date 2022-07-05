@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import ItemList from './ItemList'
+import React, { useState, useEffect } from 'react';
+import {useParams} from 'react-router-dom';
+import ItemList from './ItemList';
 
 export default function ItemListContainer ({ greeting }) {
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState([]);
+    let { idCategory } = useParams();
 
     useEffect(() => {
         let productos = [
-            {id: "1", title: "Pack kids", description: "Cumpleaños infantiles de 2 a 8 años", price: 25000, pictureUrl: "https://scontent.faep8-1.fna.fbcdn.net/v/t39.30808-6/283062670_412010437601817_8538126107349788908_n.jpg?stp=cp0_dst-jpg_e15_fr_q65&_nc_cat=103&ccb=1-7&_nc_sid=110474&_nc_ohc=X6BdR__NZswAX8L5l4k&_nc_ht=scontent.faep8-1.fna&oh=00_AT_fgjQYHISVnXcDAM12YO81BgTEO0QwaejRTPfzAy7Xow&oe=62BE9AE5"},
-            {id: "2", title: "Pack teens", description: "Cumpleaños infantiles de 9 a 13 años", price: 45000, pictureUrl: "https://scontent.faep8-2.fna.fbcdn.net/v/t39.30808-6/283083607_412010490935145_689129247065167725_n.jpg?stp=cp0_dst-jpg_e15_fr_q65&_nc_cat=104&ccb=1-7&_nc_sid=110474&_nc_ohc=xCmBat7iGF8AX9H6bS8&_nc_ht=scontent.faep8-2.fna&oh=00_AT_Xo6-rjuIQklq7orvFKwG203luj-IqsPBghrRLatgR6w&oe=62C307AD"}
+            {id: "1", title: "Pack kids", description: "Cumpleaños infantiles de 2 a 8 años", price: 25000, category: 'kids', pictureUrl: "https://scontent.faep8-1.fna.fbcdn.net/v/t39.30808-6/283062670_412010437601817_8538126107349788908_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=_tIEmNqOEAMAX8eCZ9q&_nc_ht=scontent.faep8-1.fna&oh=00_AT8se_VVMmeXYZrdPN8RtchDpyqiLZvA3MrXzxSdkactAg&oe=62C87E25"},
+            {id: "2", title: "Pack teens", description: "Cumpleaños infantiles de 9 a 13 años", price: 45000, category: 'teens', pictureUrl: "https://scontent.faep8-2.fna.fbcdn.net/v/t39.30808-6/283083607_412010490935145_689129247065167725_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=M3Ra5OCD8CMAX9bV7yY&_nc_ht=scontent.faep8-2.fna&oh=00_AT8y_WkjO5-7XhE2S5-JEOIetpj4CRO-mrDqIpIIcFLiiA&oe=62C8F66D"}
         ]
+        
 
         new Promise((res, rej) =>{
             setTimeout(() => {
@@ -16,12 +19,17 @@ export default function ItemListContainer ({ greeting }) {
             }, 2000);
         })
         .then((resultado)=>{
+            if (idCategory === undefined){
             setItems(resultado);
+            }else{
+                let filtrado = resultado.filter((item)=> item.category === idCategory);
+                setItems(filtrado);
+            }
         })
         .catch((error)=>{
             console.log(error)
         })
-    }, [])
+    }, [idCategory])
     
     return (
         <>

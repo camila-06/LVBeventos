@@ -20,9 +20,9 @@ export default function NavBar() {
                     />
                 </Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Inicio</Nav.Link>
-                    <Nav.Link href="#servicios"> Servicios</Nav.Link>
-                    <Nav.Link href="#galeria">Galería</Nav.Link>
+                    <Nav.Link href="/">Inicio</Nav.Link>
+                    <Nav.Link href="/category/kids"> Kids</Nav.Link>
+                    <Nav.Link href="/category/teens">Teens</Nav.Link>
                 </Nav>
                 <CartWidget />
             </Container>
