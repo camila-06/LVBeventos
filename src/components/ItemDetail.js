@@ -1,8 +1,16 @@
 import React from 'react'
 import {Container, Col, Row, Image} from 'react-bootstrap'
 import './ItemDetail.css'
+import ItemCount from './ItemCount';
 
 export default function ItemDetail({item}) {
+    let stock = 5
+    let initial = 1
+
+    function onAdd(count){
+        alert(`${count} producto/s agregado/s al carrito`)
+    }
+
     return (
         <>
         <div>
@@ -23,6 +31,7 @@ export default function ItemDetail({item}) {
                     </Row>
                 </Container>
         </div>
+        <ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
         </>
     )
 }

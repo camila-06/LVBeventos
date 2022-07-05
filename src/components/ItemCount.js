@@ -18,10 +18,6 @@ export default function ItemCount({stock, initial, onAdd}) {
     }
   }
 
-  function onAdd(){
-    alert(`${count} producto/s agregado/s al carrito`)
-  }
-
   return (
       <Card style={{width: "18rem"}} bg="light" className = "text-center container">
         <Card.Header>Contador</Card.Header>
