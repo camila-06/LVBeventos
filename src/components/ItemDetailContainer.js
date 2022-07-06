@@ -30,7 +30,7 @@ export default function ItemDetailContainer() {
     return (
         <>
         {/* <div>ItemDetailContainer</div> */}
-        {<ItemDetail item={item}/>}
+        <ItemDetail item={item}/>
         </>
 
     )

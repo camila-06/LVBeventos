@@ -19,7 +19,7 @@ export default function ItemCount({stock, initial, onAdd}) {
   }
 
   return (
-      <Card style={{width: "18rem"}} bg="light" className = "text-center container">
+      <Card bg="dark" className = "text-center container">
         <Card.Header>Contador</Card.Header>
         <Card.Body className="d-flex flex-row justify-content-center">
           <Button variant="outline-primary" onClick={()=>resta()}>-</Button>
@@ -28,6 +28,7 @@ export default function ItemCount({stock, initial, onAdd}) {
         </Card.Body>
         <Card.Footer>
         <Button variant="primary" onClick={()=>onAdd(count)}>Agregar al carrito</Button>
+        <Button variant="primary" href="/Cart">Comprar ahora</Button>
         </Card.Footer>
       </Card>
     )

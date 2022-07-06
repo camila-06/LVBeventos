@@ -8,7 +8,7 @@ export default function ItemDetail({item}) {
     let initial = 1
 
     function onAdd(count){
-        alert(`${count} producto/s agregado/s al carrito`)
+        alert(`${count} ${item.title} agregado/s al carrito`)
     }
 
     return (
@@ -23,15 +23,13 @@ export default function ItemDetail({item}) {
                                 <Col md="6">{item.description}</Col>
                                 <Col md="6">Precio: ${item.price}</Col>
                             </Row>
-                            <Col md="12">
-                            {item.detail}
-                        </Col>
+                            <Col md="12">{item.detail}</Col>
                         </Col>
                         <Col md="4"><Image src={item.pictureUrl} style={{ width: '18rem' }} /></Col>
+                        <Col><ItemCount stock={stock} initial={initial} onAdd={onAdd}/></Col>
                     </Row>
                 </Container>
         </div>
-        <ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
         </>
     )
 }
