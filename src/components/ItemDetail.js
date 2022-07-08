@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Container, Col, Row, Image} from 'react-bootstrap'
 import './ItemDetail.css'
 import ItemCount from './ItemCount';
+import { myContext } from './CartContext';
 
 export default function ItemDetail({item}) {
     let stock = 5
     let initial = 1
 
+    const {addItem} = useContext(myContext)
+
     function onAdd(count){
-        alert(`${count} ${item.title} agregado/s al carrito`)
+            alert(`${count} ${item.title} agregado/s al carrito`)
+            addItem(item, count);
     }
 
     return (
