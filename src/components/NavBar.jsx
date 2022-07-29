@@ -1,7 +1,8 @@
-//@ts-check
+
 import React from 'react'
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../logo.svg';
+import { NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 export default function NavBar() {
@@ -10,7 +11,7 @@ export default function NavBar() {
             <Navbar bg="dark" variant="dark">
             <Container>
                 <h3 style = {{color: 'white'}}>LVB Eventos</h3>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand>
                     <img
                     src={logo}
                     width="30"
@@ -20,11 +21,13 @@ export default function NavBar() {
                     />
                 </Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="/">Inicio</Nav.Link>
-                    <Nav.Link href="/category/kids"> Kids</Nav.Link>
-                    <Nav.Link href="/category/teens">Teens</Nav.Link>
+                    <NavLink className="nav-link" to="/">Inicio</NavLink>
+                    <NavLink className="nav-link" to="/category/kids"> Kids</NavLink>
+                    <NavLink className="nav-link" to="/category/teens">Teens</NavLink>
                 </Nav>
-                <CartWidget />
+                <NavLink to="/cart">
+                        <CartWidget />
+                    </NavLink>
             </Container>
             </Navbar>
         </>

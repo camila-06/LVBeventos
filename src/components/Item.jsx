@@ -1,5 +1,6 @@
 import React from 'react'
-import {Card, Button} from 'react-bootstrap'
+import {Card} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 export default function Item({id, tittle, description, price, pictureUrl}) {
     return (
@@ -12,7 +13,7 @@ export default function Item({id, tittle, description, price, pictureUrl}) {
                         {description} <br/>
                         ID: {id} | Precio: ${price}
                     </Card.Text>
-                    <Button href={`/item/${id}`} variant="primary">Detalle del servicio</Button>
+                    <Link to={`/item/${id}`}><button variant="primary">Detalle del servicio</button></Link>
                 </Card.Body>
             </Card>
 

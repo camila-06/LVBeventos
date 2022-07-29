@@ -17,7 +17,7 @@ export default function ItemDetail({item}) {
 
     return (
         <>
-        <div>
+        <div className='container'>
             <h2>Detalle del servicio</h2>
                 <Container className='contenedorDetail'>
                     <Row>

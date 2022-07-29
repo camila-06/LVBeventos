@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import { Card, Button } from "react-bootstrap";
+import {Link} from 'react-router-dom'
+
 
 export default function ItemCount({stock, initial, onAdd}) {
 
@@ -28,7 +30,7 @@ export default function ItemCount({stock, initial, onAdd}) {
         </Card.Body>
         <Card.Footer>
         <Button variant="primary" onClick={()=>onAdd(count)}>Agregar al carrito</Button>
-        <Button variant="primary" href="/Cart">Comprar ahora</Button>
+        <Link to="/cart"><button>Comprar ahora</button></Link>
         </Card.Footer>
       </Card>
     )
