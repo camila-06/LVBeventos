@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
-import { Card, Button } from "react-bootstrap";
-import {Link} from 'react-router-dom'
-
+import { Box, Button, Typography } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 export default function ItemCount({stock, initial, onAdd}) {
 
@@ -20,18 +20,18 @@ export default function ItemCount({stock, initial, onAdd}) {
     }
   }
 
-  return (
-      <Card bg="dark" className = "text-center container">
-        <Card.Header>Contador</Card.Header>
-        <Card.Body className="d-flex flex-row justify-content-center">
-          <Button variant="outline-primary" onClick={()=>removeItem()}>-</Button>
-          <Card.Text>{count}</Card.Text>
-          <Button variant="outline-primary" onClick={()=>addItem()}>+</Button>
-        </Card.Body>
-        <Card.Footer>
-        <Button variant="primary" onClick={()=>onAdd(count)}>Agregar al carrito</Button>
-        <Link to="/cart"><button>Comprar ahora</button></Link>
-        </Card.Footer>
-      </Card>
-    )
+  return(
+    <Box width={190} sx={{ marginX: 'auto' }}>
+        <Box sx={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'12px'}}>
+          <Button variant='contained' onClick={()=>removeItem()}><RemoveIcon/></Button>
+          <Typography variant="body1" sx={{ userSelect: 'none' }}>
+            {count}
+          </Typography>
+          <Button variant='contained' onClick={()=>addItem()}><AddIcon/></Button>
+        </Box>
+        <Box>
+          <Button variant='contained' onClick={()=>onAdd(count)}>Agregar al carrito</Button>
+        </Box>
+    </Box>
+  )
 }

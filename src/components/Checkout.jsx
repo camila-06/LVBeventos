@@ -13,7 +13,7 @@ export default function Checkout() {
     function handleClickComprar(){
         const order = {
             buyer: {name, tel, email},
-            carrito: cart,
+            items: cart,
             total: totalPrice
         };
 

@@ -2,7 +2,7 @@
 import React from 'react'
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../logo.svg';
-import { NavLink } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget';
 
 export default function NavBar() {
@@ -10,7 +10,7 @@ export default function NavBar() {
         <>
             <Navbar bg="dark" variant="dark">
             <Container>
-                <h3 style = {{color: 'white'}}>LVB Eventos</h3>
+                <h1 style = {{color: 'white'}}>LVB Eventos</h1>
                 <Navbar.Brand>
                     <img
                     src={logo}
