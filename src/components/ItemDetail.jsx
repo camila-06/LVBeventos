@@ -11,14 +11,14 @@ export default function ItemDetail({item}) {
 
     const {addItem} = useContext(myContext)
 
-    function onAdd(count){
+    function onAdd(count, setRemoveButton){
         swal({
             title: 'Listo!',
             text: `${count} ${item.title} agregado/s al carrito`,
             icon: 'success',
             timer: 2000
         });
-            addItem(item, count);
+            addItem(item, count, setRemoveButton);
     }
 
     return(

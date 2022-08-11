@@ -9,7 +9,7 @@ export default function CartContext({children}) {
 
     const isInCart = (id) => cart.find((elem) => elem.id === id) ? true : false;
 
-    function addItem (item, quantity){
+    function addItem (item, quantity, setRemoveButton){
         if (isInCart(item.id)){
             setCart(cart.map(elem =>{
                 return elem.id === item.id ? {...elem, quantity: elem.quantity + quantity} : elem
@@ -17,6 +17,7 @@ export default function CartContext({children}) {
         }else{
             setCart([...cart, {...item, quantity}])
         }
+        setRemoveButton(true);
     }
 
     function removeItem (itemId){
@@ -30,8 +31,6 @@ export default function CartContext({children}) {
     const totalPrice = cart.reduce((prev, item) => prev + (item.quantity * item.price), 0);
 
     const totalProducts = cart.reduce((acc, actualProd) => acc + actualProd.quantity, 0);
-
-    console.log("Carrito:", cart);
 
     return (
         <>

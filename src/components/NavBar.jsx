@@ -25,9 +25,7 @@ export default function NavBar() {
                     <NavLink className="nav-link" to="/category/kids"> Kids</NavLink>
                     <NavLink className="nav-link" to="/category/teens">Teens</NavLink>
                 </Nav>
-                <NavLink to="/cart">
-                        <CartWidget />
-                    </NavLink>
+                <CartWidget />
             </Container>
             </Navbar>
         </>

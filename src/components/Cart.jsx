@@ -1,14 +1,13 @@
-import './Cart.css'
 import React, {useContext} from 'react'
 import {myContext} from './CartContext'
 import {Link} from 'react-router-dom'
-import {Button, Card, Container, Typography} from '@mui/material'
+import {Button, Card, Container, Stack, Typography} from '@mui/material'
 import ProductionQuantityLimitsRoundedIcon from '@mui/icons-material/ProductionQuantityLimitsRounded';
 import TableCart from './TableCart'
 
 
 export default function Cart() {
-  const {cart} = useContext(myContext);
+  const {cart, totalPrice, clear} = useContext(myContext);
 
     if (cart.length === 0){
         return(
@@ -25,8 +24,15 @@ export default function Cart() {
     }
 
   return (
-    <TableCart/>
+    <Container sx={{display:'flex', flexDirection:'column', alignItems:'center', marginTop:'20px'}}>
+      <TableCart/>
+      <Typography variant='h5' component='p' margin={3}>
+                  Total: $ {totalPrice}
+      </Typography>
+      <Stack direction='row' spacing={2}>
+          <Link to='/checkout' style={{textDecoration: "none"}}><Button variant="contained" size="large">Iniciar compra</Button></Link>
+          <Button variant='contained' onClick={()=>clear()}>Vaciar carrito</Button>
+      </Stack>
+    </Container>
   )
 }
-
-

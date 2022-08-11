@@ -1,16 +1,15 @@
 import React, {useContext} from 'react';
 import { myContext } from './CartContext';
-import { Button, Container, Stack, Typography} from '@mui/material';
+import { Button, Typography} from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Link } from 'react-router-dom';
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material'
 
 
 export default function TableCart() {
-    const {cart, totalPrice, removeItem, clear} = useContext(myContext);
+    const {cart, removeItem} = useContext(myContext);
 
 return (
-    <Container sx={{display:'flex', flexDirection:'column', alignItems:'center', marginTop:'20px'}}>
+    <>
         <Typography variant='h3' component='h2' marginBottom={5}>
             Carrito de compras:
         </Typography>
@@ -42,13 +41,6 @@ return (
                             </TableBody>
                         </Table>
             </TableContainer>
-            <Typography variant='h5' component='p' margin={3}>
-                Total: $ {totalPrice}
-            </Typography>
-            <Stack direction='row' spacing={2}>
-                <Link to='/checkout' style={{textDecoration: "none"}}><Button variant="contained" size="large">Iniciar compra</Button></Link>
-                <Button variant='contained' onClick={()=>clear()}>Vaciar carrito</Button>
-            </Stack>
-    </Container>
+    </>
 )
 }

@@ -18,7 +18,7 @@ export default function Item({id, title, description, price, pictureUrl}) {
                         </Box>
                         <Box>
                             <Typography variant = "h6" component="h3" marginTop={0}>
-                                id: {id} | Precio: ${price}
+                                Precio: ${price}
                             </Typography>
                         </Box>
                         <Box display="flex" justifyContent="center">
