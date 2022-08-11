@@ -1,29 +1,23 @@
-
 import React from 'react'
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../logo.svg';
-import {  NavLink } from 'react-router-dom';
+import {  NavLink, Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
+import CelebrationIcon from '@mui/icons-material/Celebration';
 
 export default function NavBar() {
     return (
         <>
             <Navbar bg="dark" variant="dark">
-            <Container>
-                <h1 style = {{color: 'white'}}>LVB Eventos</h1>
+            <Container >
                 <Navbar.Brand>
-                    <img
-                    src={logo}
-                    width="30"
-                    height="30"
-                    className="d-inline-block align-top"
-                    alt="React Bootstrap logo"
-                    />
+                    <CelebrationIcon sx={{ mr: 1 }}></CelebrationIcon>
+                    <Link to="/" style={{textDecoration: "none", color: 'white'}}>LVB Eventos</Link>
                 </Navbar.Brand>
-                <Nav className="me-auto">
+                <Nav>
                     <NavLink className="nav-link" to="/">Inicio</NavLink>
-                    <NavLink className="nav-link" to="/category/kids"> Kids</NavLink>
-                    <NavLink className="nav-link" to="/category/teens">Teens</NavLink>
+                    <NavLink className="nav-link" to="/category/packs">Cumpleaños infantiles</NavLink>
+                    <NavLink className="nav-link" to="/category/integral">Servicio integral</NavLink>
+                    <NavLink className="nav-link" to="/category/products">Productos</NavLink>
                 </Nav>
                 <CartWidget />
             </Container>
