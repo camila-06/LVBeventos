@@ -35,8 +35,8 @@ export default function Checkout() {
             setIdOrder(id)
             swal({
                 icon: 'success',
-                title: 'Tu compra fue realizada con exito. ¡Muchas gracias!',
-                timer: 3000
+                title: 'Tu compra fue realizada con exito.',
+                timer: 2000
             });
         });
 
@@ -44,23 +44,34 @@ export default function Checkout() {
     }
 
 return (
-    <Container>
+    (idOrder ? (
         <Card sx={{width:'100%', borderRadius:'20px', marginTop: '50px', padding:'20px', display:'flex', flexDirection:'column', alignItems:'center', gap: 2}}>
             <Typography variant='h3' component='h1' marginBottom={5}>
-                Complete para terminar su compra
+                ¡Muchas gracias por tu compra!
             </Typography>
-            <FormControl>
-            <TextField required id="outlined-required" label="Nombre" helperText="Ingresá tu nombre completo" value={name} type="text" onChange={(e)=> setName  (e.target.value)}/>
-            </FormControl>
-            <FormControl>
-            <TextField  required id="outlined-required" label="Teléfono" helperText="Ingresá tu teléfono" value={tel} type="number" onChange={(e)=> setTel  (e.target.value)}/>
-            </FormControl>
-            <FormControl>
-            <TextField  required id="outlined-required" label="Email" helperText="Ingresá tu email" value={email} type="email" onChange={(e)=> setEmail  (e.target.value)}/>
-            </FormControl>
-            <Button variant='contained' onClick={handleClickComprar}>Comprar</Button>
-            <Typography variant='body1' component='p'>Id de compra: {idOrder}</Typography>
+            <Typography variant='body1' component='p' marginBottom={5}>
+                Tu Id de compra es: {idOrder}
+            </Typography>
         </Card>
-    </Container>
+    ): (
+        <Container>
+                <Card sx={{width:'100%', borderRadius:'20px', marginTop: '50px', padding:'20px', display:'flex', flexDirection:'column', alignItems:'center', gap: 2}}>
+                    <Typography variant='h3' component='h1' marginBottom={5}>
+                        Complete para terminar su compra
+                    </Typography>
+                    <FormControl>
+                    <TextField required id="outlined-required" label="Nombre" helperText="Ingresá tu nombre completo" value={name} type="text" onChange={(e)=> setName  (e.target.value)}/>
+                    </FormControl>
+                    <FormControl>
+                    <TextField  required id="outlined-required" label="Teléfono" helperText="Ingresá tu teléfono" value={tel} type="number" onChange={(e)=> setTel  (e.target.value)}/>
+                    </FormControl>
+                    <FormControl>
+                    <TextField  required id="outlined-required" label="Email" helperText="Ingresá tu email" value={email} type="email" onChange={(e)=> setEmail  (e.target.value)}/>
+                    </FormControl>
+                    <Button variant='contained' onClick={handleClickComprar}>Comprar</Button>
+                    <Typography variant='body1' component='p'>Id de compra: {idOrder}</Typography>
+                </Card>
+            </Container>
+    ))
 )
 }
