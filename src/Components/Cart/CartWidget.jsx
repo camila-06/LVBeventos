@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { myContext } from './CartContext';
+import { myContext } from '../../Context/CartContext';
 import { Link } from 'react-router-dom';
 import {Badge} from '@mui/material'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';

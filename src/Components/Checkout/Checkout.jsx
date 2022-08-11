@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useContext } from 'react';
-import { myContext } from './CartContext';
+import { myContext } from '../../Context/CartContext';
 import {collection, getFirestore, addDoc} from 'firebase/firestore';
 import { Button, Card, Container, FormControl, TextField, Typography} from '@mui/material';
 import swal from 'sweetalert';

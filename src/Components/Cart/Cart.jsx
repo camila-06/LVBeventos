@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {myContext} from './CartContext'
+import {myContext} from '../../Context/CartContext'
 import {Link} from 'react-router-dom'
 import {Button, Card, Container, Stack, Typography} from '@mui/material'
 import ProductionQuantityLimitsRoundedIcon from '@mui/icons-material/ProductionQuantityLimitsRounded';

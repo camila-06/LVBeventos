@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar, Nav, Container } from "react-bootstrap";
 import {  NavLink, Link } from 'react-router-dom';
-import CartWidget from './CartWidget';
+import CartWidget from '../Cart/CartWidget';
 import CelebrationIcon from '@mui/icons-material/Celebration';
 
 export default function NavBar() {

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import ItemCount from './ItemCount';
-import { myContext } from './CartContext';
+import { myContext } from '../../Context/CartContext';
 import { Typography, Box, Paper, Card, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import swal from 'sweetalert';

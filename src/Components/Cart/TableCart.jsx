@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import { myContext } from './CartContext';
+import { myContext } from '../../Context/CartContext';
 import { Button, Typography} from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material'
